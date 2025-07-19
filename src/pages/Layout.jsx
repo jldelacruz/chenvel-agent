@@ -29,6 +29,7 @@ function Layout() {
         </Container>
       </Navbar>
       <Container>
+        <br/>
         <Outlet />
       </Container>
     </>
