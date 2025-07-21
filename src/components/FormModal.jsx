@@ -1,6 +1,6 @@
 import { Modal, Button } from 'react-bootstrap';
 
-const FormModal = ({show, handleClose, title, children}) => {
+const FormModal = ({show, handleClose, handleSubmit, title, children}) => {
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
@@ -8,7 +8,7 @@ const FormModal = ({show, handleClose, title, children}) => {
             </Modal.Header>
             <Modal.Body>{children}</Modal.Body>
             <Modal.Footer>
-                <Button variant="primary" size="sm" onClick={handleClose}>
+                <Button type='button' variant="primary" size="sm" onClick={handleSubmit}>
                 Save
                 </Button>
                 <Button variant="secondary" size="sm" onClick={handleClose}>
