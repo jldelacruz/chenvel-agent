@@ -21,7 +21,7 @@ const Orders = () => {
         handleClose={handleClose}
         title='Order a box'
       >
-        <label>etrsa</label>
+        
       </FormModal>
     </>
   );
