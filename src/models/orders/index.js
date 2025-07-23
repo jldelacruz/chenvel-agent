@@ -2,12 +2,14 @@ import * as yup from 'yup';
 
 export const order = {
     deliveryDate: '',
-    timeFrom: '',
-    timeTo: ''
+    timeFrom: '08:00 am',
+    timeTo: '08:00 pm',
+    regQty: 0,
+    halfQty: 0
 }
 
 export const orderValidation = yup.object().shape({
-    deliveryDate: yup.string().required(),
-    timeFrom: yup.string().required(),
-    timeTo: yup.string().required(),
+    deliveryDate: yup.string().required('Please select a delivery date.'),
+    timeFrom: yup.string().required('Please select a time (from).'),
+    timeTo: yup.string().required('Please select a time (to).'),
 });
