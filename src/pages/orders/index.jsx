@@ -1,19 +1,18 @@
 import { useState } from 'react';
-import { time } from '../../api/constants';
+import { time, timeTo } from '../../api/constants';
 
 import * as formik from 'formik';
 
 import { 
   Button, 
-  Col, 
   Row,
   Form,
-  Container
 } from "react-bootstrap";
 import FormModal from '../../components/FormModal';
 
 import FormControl from '../../components/FormControl';
 import FormSelect from '../../components/FormSelect';
+import FormCheck from '../../components/FormCheck';
 
 import { order, orderValidation } from '../../models/orders';
 
@@ -49,7 +48,8 @@ const Orders = () => {
       <Button variant="primary" size="sm" onClick={handleShow}>
         Order a box
       </Button>
-      <FormModal 
+      <FormModal
+        size='lg' 
         show={show} 
         handleClose={handleClose}
         handleSubmit={handleSubmit}
@@ -57,18 +57,18 @@ const Orders = () => {
       >
         <Formik>
           <Form noValidate>
-            <Row className="mb-3">
+            <Row>
               <FormControl 
                 label='Delivery Date:'
                 type="date"
+                size='sm'
                 name="deliveryDate"
                 value={values.deliveryDate}
                 onChange={handleChange}
                 isInvalid={touched.deliveryDate && errors.deliveryDate} 
                 error={errors.deliveryDate}
+                addlProps={{md: 6,  className: 'mb-3'}}
               />
-            </Row>
-            <Row>
               <FormSelect 
                 name='timeFrom'
                 label='Time(From):'
@@ -78,7 +78,7 @@ const Orders = () => {
                 list={time}
                 isInvalid={touched.timeFrom && errors.timeFrom}
                 error={errors.timeFrom}
-                addlProps={{md: 6, className: 'mb-3'}}
+                addlProps={{md: 3, className: 'mb-3'}}
               />
               <FormSelect 
                 name='timeTo'
@@ -86,22 +86,102 @@ const Orders = () => {
                 value={values.timeTo}
                 onChange={handleChange}
                 size='sm'
-                list={time}
+                list={timeTo}
                 isInvalid={touched.timeTo && errors.timeTo}
                 error={errors.timeTo}
-                addlProps={{md: 6, className: 'mb-3'}}
+                addlProps={{md: 3, className: 'mb-3'}}
               />
             </Row>
+            <Row>
               <FormControl 
                 label='Jumbo:'
                 type="number"
+                size='sm'
                 name="regQty"
                 value={values.regQty}
                 onChange={handleChange}
                 isInvalid={touched.regQty && errors.regQty} 
                 error={errors.regQty}
+                addlProps={{md: 3, className: 'mb-4'}}
               />
+              <FormControl 
+                label='Half:'
+                type="number"
+                size='sm'
+                name="halfQty"
+                value={values.halfQty}
+                onChange={handleChange}
+                isInvalid={touched.halfQty && errors.halfQty} 
+                error={errors.halfQty}
+                addlProps={{md: 3, className: 'mb-4'}}
+              />
+              <FormControl 
+                label='PL:'
+                type="number"
+                size='sm'
+                name="pl"
+                value={values.pl}
+                onChange={handleChange}
+                isInvalid={touched.pl && errors.pl} 
+                error={errors.pl}
+                addlProps={{md: 3, className: 'mb-4'}}
+              />
+              <FormControl 
+                label='Sticker:'
+                type="number"
+                size='sm'
+                name="sticker"
+                value={values.sticker}
+                onChange={handleChange}
+                isInvalid={touched.sticker && errors.sticker} 
+                error={errors.sticker}
+                addlProps={{md: 3, className: 'mb-4'}}
+              />
+            </Row>
             <Row>
+              <FormCheck 
+                label='COD?'
+                type="switch"
+                size='sm'
+                name="cod"
+                value={values.cod}
+                onChange={handleChange}
+                error={errors.sticker}
+                addlProps={{md: 3, className: 'mb-3'}}
+              />
+              <FormCheck 
+                label='E-Collect?'
+                type="switch"
+                size='sm'
+                name="isECollect"
+                value={values.isECollect}
+                onChange={handleChange}
+                error={errors.isECollect}
+                addlProps={{md: 3, className: 'mb-3'}}
+              />
+              <FormCheck 
+                label='Genkan?'
+                type="switch"
+                size='sm'
+                name="isGenkan"
+                value={values.isGenkan}
+                onChange={handleChange}
+                error={errors.isGenkan}
+                addlProps={{md: 3, className: 'mb-3'}}
+              />
+            </Row>
+            <Row>
+              <FormControl
+                label='Memo:'
+                as="textarea"
+                size='sm'
+                name="memo"
+                value={values.memo}
+                onChange={handleChange}
+                isInvalid={touched.memo && errors.memo} 
+                error={errors.memo}
+                addlProps={{md: 12,  className: 'mb-3'}}
+              />
             </Row>
           </Form>
         </Formik>

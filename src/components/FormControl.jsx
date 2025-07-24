@@ -1,20 +1,26 @@
 import { Form, Col } from "react-bootstrap";
 
 const FormControl = ({
-        label, 
-        feedback,
+        as,
+        rows,
+        label,
         type,
+        size,
         name,
         value,
         onChange,
         isInvalid,
-        error
+        error, 
+        addlProps
     }) => {
     return (
-        <Form.Group as={Col}>
+        <Form.Group as={Col} {...addlProps}>
             <Form.Label>{label}</Form.Label>
             <Form.Control 
+                as={as}
+                rows={rows}
                 type={type}
+                size={size}
                 name={name}
                 value={value}
                 onChange={onChange}

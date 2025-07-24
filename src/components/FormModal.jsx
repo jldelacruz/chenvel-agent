@@ -1,8 +1,8 @@
 import { Modal, Button } from 'react-bootstrap';
 
-const FormModal = ({show, handleClose, handleSubmit, title, children}) => {
+const FormModal = ({show, size, handleClose, handleSubmit, title, children}) => {
     return (
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleClose} size={size}>
             <Modal.Header closeButton>
                 <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
