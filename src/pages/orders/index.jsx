@@ -14,7 +14,7 @@ import FormControl from '../../components/FormControl';
 import FormSelect from '../../components/FormSelect';
 import FormCheck from '../../components/FormCheck';
 
-import { order, orderValidation } from '../../models/orders';
+import { order, orderValidation } from '../../models/order';
 
 const Orders = () => {
   const { Formik, useFormik } = formik;
@@ -46,7 +46,7 @@ const Orders = () => {
     <>
       <h4>Orders</h4>
       <Button variant="primary" size="sm" onClick={handleShow}>
-        Order a box
+        Order a Box
       </Button>
       <FormModal
         size='lg' 
