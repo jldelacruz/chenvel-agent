@@ -26,3 +26,26 @@ export const pickupTimeFrom = [
 	{ text: "06:00 pm", value: "06:00 pm" },
 	{ text: "07:00 pm", value: "07:00 pm" },
 ];
+
+export const sampleOrders = [
+	{ 
+		id: 2, 
+		status: 'PENDING', 
+		regQty: 1, 
+		halfQty: 4,
+		prefecture: 'Tochigi-ken',
+		city: 'Oyamashi',
+		town: 'Hanekawa Oowaza',
+		postalCode: '1244'
+	},
+	{ 
+		id: 1, 
+		status: 'ORDERED', 
+		regQty: 1, 
+		halfQty: 4,
+		prefecture: 'Tochigi-ken',
+		city: 'Oyamashi',
+		town: 'Hanekawa Oowaza',
+		postalCode: '1244'
+	}
+];
