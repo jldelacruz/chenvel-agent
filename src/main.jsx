@@ -8,6 +8,8 @@ import Layout from "./pages/Layout";
 import Home from "./pages/home";
 import StaticExample from './pages/orders';
 import Pickups from './pages/pickups';
+import Login from './pages/login';
+import Register from './pages/register';
 
 export default function App() {
   return (
@@ -18,6 +20,8 @@ export default function App() {
           <Route path='/orders' element={<StaticExample />} />
           <Route path='/pickups' element={<Pickups />} />
         </Route>
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Register />} />
       </Routes>
     </BrowserRouter>
   );

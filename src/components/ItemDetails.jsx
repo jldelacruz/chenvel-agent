@@ -2,10 +2,15 @@ import { Alert, Button } from "react-bootstrap";
 import { Clock, GeoAlt, Calendar2Check, Pencil, Trash } from 'react-bootstrap-icons'
 
 const ItemDetails = ({item}) => {
+
+    const isOrderedOrScheduled = () => {
+        return item.status === 'ORDERED' || item.status ===  'SCHEDULED';
+    }
+
     return(
-        <Alert key={item.id} variant={item.status === 'ORDERED' ? 'success' : 'warning'}>
+        <Alert key={item.id} variant={isOrderedOrScheduled() ? 'success' : 'warning'}>
             <Alert.Heading>
-                { item.status === 'ORDERED' | 'SCHEDULED' ? <Calendar2Check /> : <Clock/> }
+                { isOrderedOrScheduled() ? <Calendar2Check /> : <Clock/> }
                 { item.status === 'ORDERED' ? ' Ordered' : item.status === 'SCHEDULED' ? ' Scheduled' : ' Lined-Up' }
             </Alert.Heading>
             <p>1 Jumbo / 4 Half</p>

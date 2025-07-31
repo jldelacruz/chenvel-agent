@@ -30,7 +30,7 @@ export const pickupTimeFrom = [
 export const sampleOrders = [
 	{ 
 		id: 2, 
-		status: 'PENDING', 
+		status: 'LINED-UP', 
 		regQty: 1, 
 		halfQty: 4,
 		prefecture: 'Tochigi-ken',
@@ -41,6 +41,29 @@ export const sampleOrders = [
 	{ 
 		id: 1, 
 		status: 'ORDERED', 
+		regQty: 1, 
+		halfQty: 4,
+		prefecture: 'Tochigi-ken',
+		city: 'Oyamashi',
+		town: 'Hanekawa Oowaza',
+		postalCode: '1244'
+	}
+];
+
+export const samplePickups = [
+	{ 
+		id: 2, 
+		status: 'LINED-UP', 
+		regQty: 1, 
+		halfQty: 4,
+		prefecture: 'Tochigi-ken',
+		city: 'Oyamashi',
+		town: 'Hanekawa Oowaza',
+		postalCode: '1244'
+	},
+	{ 
+		id: 1, 
+		status: 'SCHEDULED', 
 		regQty: 1, 
 		halfQty: 4,
 		prefecture: 'Tochigi-ken',

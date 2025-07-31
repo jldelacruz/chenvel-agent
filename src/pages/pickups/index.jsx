@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { pickupTimeFrom, timeTo } from '../../api/constants';
+import { pickupTimeFrom, timeTo, samplePickups } from '../../api/constants';
 
 import * as formik from 'formik';
 
@@ -8,14 +8,16 @@ import {
   Row,
   Form,
 } from "react-bootstrap";
-import FormModal from '../../components/FormModal';
 
+import { Calendar, Calendar2, Calendar3 } from 'react-bootstrap-icons';
+
+import FormModal from '../../components/FormModal';
 import FormControl from '../../components/FormControl';
 import FormSelect from '../../components/FormSelect';
-import FormCheck from '../../components/FormCheck';
+import ItemDetails from '../../components/ItemDetails';
+
 
 import { pickup, pickupValidation } from '../../models/pickup';
-
 const Pickups = () => {
   const { Formik, useFormik } = formik;
   const [show, setShow] = useState(false);
@@ -47,8 +49,15 @@ const Pickups = () => {
     <>
       <h4>Pickups</h4>
       <Button variant="primary" size="sm" onClick={handleShow}>
-        Schedule a Pickup
+        <Calendar3 /> &nbsp;Schedule a Pickup
       </Button>
+      <br/><br/>
+      {samplePickups.map((order) => {
+        return(
+          <ItemDetails key={order.id} item={order} />
+        );
+      })}
+      
       <FormModal
         size='lg' 
         show={show} 

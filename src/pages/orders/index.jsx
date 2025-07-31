@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { time, timeTo, sampleOrders } from '../../api/constants';
-
 import * as formik from 'formik';
 
 import { 
@@ -12,13 +10,13 @@ import {
 import { Cart4 } from 'react-bootstrap-icons';
 
 import FormModal from '../../components/FormModal';
-
 import FormControl from '../../components/FormControl';
 import FormSelect from '../../components/FormSelect';
 import FormCheck from '../../components/FormCheck';
-
-import { order, orderValidation } from '../../models/order';
 import ItemDetails from '../../components/ItemDetails';
+
+import { time, timeTo, sampleOrders } from '../../api/constants';
+import { order, orderValidation } from '../../models/order';
 
 const Orders = () => {
   const { Formik, useFormik } = formik;
@@ -50,7 +48,7 @@ const Orders = () => {
     <>
       <h4>Orders</h4>
       <Button variant="primary" size="sm" onClick={handleShow}>
-        <Cart4/>  Order a Box
+        <Cart4 size={17}/>&nbsp; Order a Box
       </Button>
       <br/><br/>
 
