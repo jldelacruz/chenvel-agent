@@ -4,6 +4,7 @@ const FormControl = ({
         as,
         rows,
         label,
+        placeholder,
         type,
         size,
         name,
@@ -20,6 +21,7 @@ const FormControl = ({
                 as={as}
                 rows={rows}
                 type={type}
+                placeholder={placeholder}
                 size={size}
                 name={name}
                 value={value}

@@ -10,6 +10,7 @@ import StaticExample from './pages/orders';
 import Pickups from './pages/pickups';
 import Login from './pages/login';
 import Register from './pages/register';
+import Account from './pages/account';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path='/orders' element={<StaticExample />} />
           <Route path='/pickups' element={<Pickups />} />
+          <Route path='/account' element={<Account />} />
         </Route>
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Register />} />
