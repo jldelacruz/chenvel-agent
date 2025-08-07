@@ -8,7 +8,8 @@ export const account = {
     postalCode: 0,
     prefecture: 0,
     city: 0,
-    town: 0
+    town: 0,
+    streetAddress: ''
 }
 
 export const accountValidation = yup.object().shape({

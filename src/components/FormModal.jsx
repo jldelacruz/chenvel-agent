@@ -1,4 +1,5 @@
 import { Modal, Button } from 'react-bootstrap';
+import { Check, XCircle } from 'react-bootstrap-icons';
 
 const FormModal = ({show, size, handleClose, handleSubmit, title, children}) => {
     return (
@@ -9,10 +10,10 @@ const FormModal = ({show, size, handleClose, handleSubmit, title, children}) => 
             <Modal.Body>{children}</Modal.Body>
             <Modal.Footer>
                 <Button type='button' variant="primary" size="sm" onClick={handleSubmit}>
-                Save
+                <Check size={20} /> Save
                 </Button>
                 <Button variant="secondary" size="sm" onClick={handleClose}>
-                Cancel
+                <XCircle size={17} /> Cancel
                 </Button>
             </Modal.Footer>
         </Modal>

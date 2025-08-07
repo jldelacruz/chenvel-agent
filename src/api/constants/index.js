@@ -72,3 +72,19 @@ export const samplePickups = [
 		postalCode: '1244'
 	}
 ];
+
+
+export const samplePrefectures = [
+	{ text: 'Pref 1', value: 1 },
+	{ text: 'Pref 2', value: 2 }
+];
+
+export const sampleCities = [
+	{ text: 'City 1', value: 1 },
+	{ text: 'City 2', value: 2 }
+];
+
+export const sampleTowns = [
+	{ text: 'Town 1', value: 1 },
+	{ text: 'Town 2', value: 2 }
+];
