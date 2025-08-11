@@ -13,14 +13,8 @@ const ItemDetails = ({ item, setShow }) => {
   const isOrderedOrScheduled = () => {
     let color = "";
 
-    if (
-      item.status === "ORDERED" ||
-      item.status === "SCHEDULED" ||
-      item.status === "DELIVERED"
-    )
-      color = "success";
-    else if (item.status === "LINED-UP") color = "warning";
-    else color = "danger";
+    if (item.status === "DELIVERED") color = "success";
+    else color = "warning";
     return color;
   };
 
@@ -34,28 +28,35 @@ const ItemDetails = ({ item, setShow }) => {
         ) : (
           <XCircle />
         )}
-        {item.status === "ORDERED"
-          ? " Ordered"
-          : item.status === "SCHEDULED"
-          ? " Scheduled"
+        {item.status === "PACKING LIST"
+          ? " Arrived at Japan Warehouse"
+          : item.departureDate !== "" && item.arrivalDate === ""
+          ? " Departed"
+          : item.status === "REMAINING"
+          ? " Arrived at Philippine Warehouse"
+          : item.status === "WITH DR"
+          ? " Preparing for delivery"
           : item.status === "DELIVERED"
           ? " Delivered"
-          : item.status === "LINED-UP"
-          ? " Lined-Up"
-          : " Cancelled"}
+          : ""}
       </Alert.Heading>
       <p>
-        {item.regQty > 0 ? item.regQty + " Jumbo" : ""}
-        {" / "}
-        {item.halfQty > 0 ? item.halfQty + " Half" : ""} - Delivery Schedule:{" "}
-        {item.deliveryDate}
+        Actual Departure: {item.departureDate} {" - "} Estimated Arrival:{" "}
+        {item.arrivalDate} {" - "} Actual Arrival: {item.arrivalDate} {" - "}{" "}
+        Date Out: {item.dateOut} {" - "} Date Delivered: {item.dateDelivered}
+      </p>
+      <p>
+        Tracking #: {item.trackNo} - Receiver Name: {item.receiverFullName}
+      </p>
+      <p>
+        Driver: {item.driver} - Contact #: {item.deliveryPhone}
       </p>
       <p></p>
       <hr />
       <div className="d-flex">
         <p>
-          <GeoAlt /> {item.prefecture}, {item.city}, {item.town} #
-          {item.postalCode}
+          <GeoAlt /> {item.receiverState}, {item.receiverCity},{" "}
+          {item.receiverAddress}
         </p>
         <Button
           size="sm"

@@ -1,9 +1,9 @@
-import { Outlet } from 'react-router-dom';
-import { LinkContainer } from 'react-router-bootstrap';
+import { Outlet } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 function Layout() {
   return (
@@ -14,13 +14,13 @@ function Layout() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <LinkContainer to='/'>
+              <LinkContainer to="/packages">
                 <Nav.Link>Packages</Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/orders'>
+              <LinkContainer to="/orders">
                 <Nav.Link>Orders</Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/pickups'>
+              <LinkContainer to="/pickups">
                 <Nav.Link>Pickups</Nav.Link>
               </LinkContainer>
             </Nav>
@@ -28,7 +28,7 @@ function Layout() {
         </Container>
       </Navbar>
       <Container>
-        <br/>
+        <br />
         <Outlet />
       </Container>
     </>
